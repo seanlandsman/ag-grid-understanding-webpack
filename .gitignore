@@ -1,0 +1,7 @@
+# intellij files
+*.iml
+.idea
+
+node_modules
+
+dist

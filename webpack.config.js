@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -23,15 +24,28 @@ module.exports = {
                 loader: ExtractTextPlugin.extract('css-loader')
             },
             {
-                test: /\.png$/,
-                loaders: [
-                    'url-loader?limit=5000',
-                    'image-webpack-loader'
-                ]
-            }
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: "file-loader?name=icons/[module]/[name].[ext]"
+// i. e. file?name=[path][name].[ext]&context=/the/root/path
+// This copies the file /the/root/path/dir/file.png to /output-directory/dir/file.png.
+
+                // loaders: [
+
+                //     'url-loader?limit=5000',
+                //     'image-webpack-loader'
+                // ]
+            },
+           { test: require.resolve('jquery'), loader: 'expose?jQuery!expose?$' }
         ]
     },
     plugins: [
         new ExtractTextPlugin('style.css')
+    //      new webpack.ProvidePlugin({
+    //   '$': 'jquery',
+    //   'jquery': 'jquery',
+    //   'jQuery': 'jquery',
+    //   'window.$': 'jquery',
+    //   'window.jQuery': 'jquery' // jQuery pluginy no ... ¯\_(ツ)_/¯
+    // }),
     ]
 };

@@ -38,13 +38,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('style.css'),
-         new webpack.ProvidePlugin({
-      '$': 'jquery',
-      'jquery': 'jquery',
-      'jQuery': 'jquery',
-      'window.$': 'jquery',
-      'window.jQuery': 'jquery' // jQuery pluginy no ... ¯\_(ツ)_/¯
-    }),
+        new ExtractTextPlugin('style.css')
+    //      new webpack.ProvidePlugin({
+    //   '$': 'jquery',
+    //   'jquery': 'jquery',
+    //   'jQuery': 'jquery',
+    //   'window.$': 'jquery',
+    //   'window.jQuery': 'jquery' // jQuery pluginy no ... ¯\_(ツ)_/¯
+    // }),
     ]
 };

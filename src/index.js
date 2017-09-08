@@ -40,7 +40,7 @@ document.body.appendChild(multiplyResultsSpan);
 addImageToPage(sumImg);
 document.body.appendChild(sumResultSpan);
 
-
+require("expose?$!jquery");
 //import jQuery from 'jquery'; as it seems no import is needed?!
 $(document).ready(function() {
   $('body').css("background-color", "red");

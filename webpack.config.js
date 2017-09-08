@@ -34,7 +34,8 @@ module.exports = {
                 //     'url-loader?limit=5000',
                 //     'image-webpack-loader'
                 // ]
-            }
+            },
+           { test: require.resolve('jquery'), loader: 'expose?jQuery!expose?$' }
         ]
     },
     plugins: [

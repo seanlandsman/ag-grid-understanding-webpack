@@ -39,3 +39,10 @@ document.body.appendChild(multiplyResultsSpan);
 
 addImageToPage(sumImg);
 document.body.appendChild(sumResultSpan);
+
+document.body.appendChild(document.createElement("p"););
+
+//import jQuery from 'jquery'; as it seems no import is needed?!
+$(document).ready(function() {
+  $('body').css("background-color", "red");
+});
